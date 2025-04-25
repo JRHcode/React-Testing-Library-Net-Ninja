@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import Banner from './components/Banner/Banner';
-import { Switch, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"; // Note: "Switch" is now "Routes"
 import TodoPage from './pages/TodoPage/TodoPage';
 import FollowersPage from './pages/FollowersPage/FollowersPage';
 
@@ -9,14 +8,12 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Switch>
-        <Route strict exact path="/" component={TodoPage}/>
-        <Route strict exact path="/followers" component={FollowersPage}/>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<TodoPage />} />
+        <Route path="/followers" element={<FollowersPage />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
-
-//change
